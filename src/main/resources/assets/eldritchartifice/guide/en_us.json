@@ -289,7 +289,7 @@
   },
   "eldritchartifice:armor": {
     "index": 88,
-    "category": "artifice",
+    "category": "eldrin_altar",
     "tier": 5,
     "sections": [
       {
@@ -380,7 +380,9 @@
             "text": "To choose an anchor, I use the radial-menu key while holding the staff. Crouching while using it records the selected anchor; using it while standing opens the way."
           }
         ]
-      },
+      }
+    ],
+    "related_recipes": [
       {
         "type": "eldrin_altar",
         "location": "eldritchartifice:eldrin_altar/artifice/staff_of_the_open_way"
@@ -579,7 +581,7 @@
   },
   "eldritchartifice:caged_singularity": {
     "index": 95,
-    "category": "spell_components",
+    "category": "sorcery",
     "tier": 5,
     "sections": [
       {
@@ -601,6 +603,138 @@
             "text": "The aspect at the bastion yields a spell thesis after its defeat. Its secret may be kept in the Book of Rote; the altar cannot teach this spell."
           }
         ]
+      }
+    ]
+  },
+  "eldritchartifice:armor_hood": {
+    "index": 96,
+    "category": "eldrin_altar",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Hood of the Open Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood of the Open Eye completes the gaze of my Eldritch armor. I bind it at the Eldrin Altar with Ender and Arcane power."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood, Vestment, Wraps, and Steps must be worn together before the full ward answers me."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/hood"
+      }
+    ]
+  },
+  "eldritchartifice:armor_vestment": {
+    "index": 97,
+    "category": "eldrin_altar",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Vestment of the Open Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Vestment of the Open Eye bears the heart of my Eldritch armor. Its working at the Eldrin Altar draws upon Ender power."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood, Vestment, Wraps, and Steps must be worn together before the full ward answers me."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/vestment"
+      }
+    ]
+  },
+  "eldritchartifice:armor_wraps": {
+    "index": 98,
+    "category": "eldrin_altar",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wraps of the Open Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Wraps of the Open Eye hold my Eldritch armor fast against the ground. Their working at the Eldrin Altar combines Ender and Earth power."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood, Vestment, Wraps, and Steps must be worn together before the full ward answers me."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/wraps"
+      }
+    ]
+  },
+  "eldritchartifice:armor_steps": {
+    "index": 99,
+    "category": "eldrin_altar",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Steps of the Open Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Steps of the Open Eye follow paths that should not meet. This part of my Eldritch armor draws Ender and Wind power from the Eldrin Altar."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood, Vestment, Wraps, and Steps must be worn together before the full ward answers me."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/steps"
       }
     ]
   }

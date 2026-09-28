@@ -8,13 +8,15 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.11.14-prototype";
+    public static final String VERSION = "0.11.15-prototype";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
         MnaSpellConfigRaceGuard.install();
 
         ModEventBridge modEventBridge = new ModEventBridge();
+        modEventBridge.register("net.minecraftforge.event.BuildCreativeModeTabContentsEvent",
+                event -> safeHandle("creative item listing", () -> EldritchCreativeItems.buildContents(event)));
         modEventBridge.register(
                 "net.minecraftforge.registries.RegisterEvent",
                 event -> {

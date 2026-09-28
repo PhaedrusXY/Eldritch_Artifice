@@ -2,13 +2,13 @@
 
 An experimental Eldritch faction addon for **Minecraft 1.20.1**, **Forge 47.4.10**, **Mana and Artifice 3.1.11**, and **Dimensional Doors 5.4.4**.
 
-**Current source and jar version:** `0.11.14-prototype`. Adds a tier 5 Staff of the Open Way recipe, an Eldritch Mark, and a Caged Singularity spell thesis dropped by Yog-Sothoth. See [release notes](RELEASE_NOTES.md).
+**Current source and jar version:** `0.11.15-prototype`. Fixes JEI/creative item discovery and adds individual tier 5 armor Codex recipe entries. See [release notes](RELEASE_NOTES.md).
 
 The repository tracks the editable Java sources, recipes, codex pages, textures, and Gradle build definition. It does not bundle the copyrighted Minecraft, Forge, M&A, or Dimensional Doors jars. Forge and the two mods are required to play.
 
 ## Build
 
-Install Java 17 and a compatible Gradle 8 release. From this repository run `gradle build`. Gradle retrieves Forge and the mod dependencies listed in `build.gradle`; the resulting jar is under `build/libs/`. A packaged jar is available separately in ChatGPT's project files. The 0.11.14 patch was compiled against the prior jar and M&A API with local development stubs; a full clean Gradle build and dedicated-server boot have not been verified here.
+Install Java 17 and a compatible Gradle 8 release. From this repository run `gradle build`. Gradle retrieves Forge and the mod dependencies listed in `build.gradle`; the resulting jar is under `build/libs/`. A packaged jar is available separately in ChatGPT's project files. The 0.11.15 patch was compiled against the prior jar and M&A API with local development stubs; a full clean Gradle build and dedicated-server boot have not been verified here.
 
 ## Test
 
