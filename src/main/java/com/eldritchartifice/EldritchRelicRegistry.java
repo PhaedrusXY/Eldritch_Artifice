@@ -14,6 +14,8 @@ final class EldritchRelicRegistry {
     // ordinary JSON item model; spell inventory, menus and casting stay native.
     static final Grimoire GRIMOIRE = new Grimoire(
             new Item.Properties().m_41487_(1), EldritchFaction.ID, null, null, false);
+    static final ResourceLocation MARK_ID = new ResourceLocation(EldritchArtifice.MOD_ID, "mark_of_the_open_eye");
+    static final Item MARK = new Item(new Item.Properties());
     static final LensOfTheVeil LENS = new LensOfTheVeil();
 
     private EldritchRelicRegistry() {}
@@ -23,6 +25,7 @@ final class EldritchRelicRegistry {
         registerEvent.register(ForgeRegistries.ITEMS.getRegistryKey(), helper -> {
             helper.register(GRIMOIRE_ID, GRIMOIRE);
             helper.register(LENS_ID, LENS);
+            helper.register(MARK_ID, MARK);
             RuntimeLog.info("Registered Eldritch grimoire and Lens of the Veil.");
         });
     }

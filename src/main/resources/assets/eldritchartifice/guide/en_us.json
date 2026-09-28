@@ -380,6 +380,10 @@
             "text": "To choose an anchor, I use the radial-menu key while holding the staff. Crouching while using it records the selected anchor; using it while standing opens the way."
           }
         ]
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/artifice/staff_of_the_open_way"
       }
     ]
   },
@@ -570,6 +574,33 @@
       {
         "type": "manaweaving_altar",
         "location": "eldritchartifice:manaweaving/wayfarer_door"
+      }
+    ]
+  },
+  "eldritchartifice:caged_singularity": {
+    "index": 95,
+    "category": "spell_components",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Caged Singularity"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Beyond the threshold, Yog-Sothoth holds a hungry point of space in place. Its pull takes hold of nearby creatures for a short while, but neither wounds them nor shakes loose the greatest beings."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The aspect at the bastion yields a spell thesis after its defeat. Its secret may be kept in the Book of Rote; the altar cannot teach this spell."
+          }
+        ]
       }
     ]
   }

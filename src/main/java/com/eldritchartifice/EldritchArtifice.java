@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.11.9-prototype";
+    public static final String VERSION = "0.11.14-prototype";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
@@ -181,11 +181,14 @@ public final class EldritchArtifice {
                             WatcherService.clearAll("server_stopping");
                             DisplacementService.clearAll("server_stopping");
                             TimeWarpService.clearAll("server_stopping");
+                            CagedSingularityService.clear();
                             Tier5ArmorService.clearAll("server_stopping");
                         }));
 
         eventBridge.register("net.minecraftforge.event.TickEvent$ServerTickEvent",
                 event -> safeHandle("shoggoth tick", () -> ShoggothService.tick(event)));
+        eventBridge.register("net.minecraftforge.event.TickEvent$ServerTickEvent",
+                event -> safeHandle("singularity tick", () -> CagedSingularityService.tick(event)));
         eventBridge.register("net.minecraftforge.event.entity.living.LivingAttackEvent",
                 event -> safeHandle("shoggoth parallax", () -> ShoggothService.attack(event)));
         eventBridge.register("net.minecraftforge.event.entity.EntityJoinLevelEvent",

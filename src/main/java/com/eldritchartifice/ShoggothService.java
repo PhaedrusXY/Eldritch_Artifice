@@ -160,7 +160,11 @@ final class ShoggothService {
         if(name!=null&&Set.of("Yog-Sothoth","The Unmoored Rift").contains(call(name,"getString")))
             call(event,"setCanceled",true);
     }
-    static void drops(Object event){if(marked(call(event,"getEntity")))call(event,"setCanceled",true);}
+    static void drops(Object event){Object entity=call(event,"getEntity");if(!marked(entity))return;
+        // Override iron golem loot without canceling the event that carries our rewards.
+        ((java.util.Collection<?>)call(event,"getDrops")).clear();
+        BossRewards.drop(event,entity);
+    }
     static void experience(Object event){if(marked(call(event,"getEntity")))call(event,"setDroppedExperience",0);}
     static void grief(Object event){if(!marked(call(event,"getEntity")))return;try{Class<?> type=Class.forName("net.minecraftforge.eventbus.api.Event$Result");for(Object value:type.getEnumConstants())if(value.toString().equals("DENY"))call(event,"setResult",value);}catch(ClassNotFoundException ex){throw new IllegalStateException(ex);}}
     static void pull(Object p,double[] center,double strength) {

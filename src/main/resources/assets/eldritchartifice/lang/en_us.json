@@ -45,5 +45,15 @@
   "item.eldritchartifice.lens_of_the_veil": "Lens of the Veil",
   "item.eldritchartifice.wayfarer_door": "Wayfarer's Doors",
   "block.eldritchartifice.wayfarer_door": "Wayfarer's Door",
-  "item.eldritchartifice.wayfarer_case": "Wayfarer's Doors"
+  "item.eldritchartifice.wayfarer_case": "Wayfarer's Doors",
+  "item.eldritchartifice.mark_of_the_open_eye": "Mark of the Open Eye",
+  "spell.eldritchartifice.caged_singularity": "Caged Singularity",
+  "mna.spell.eldritchartifice.caged_singularity": "Caged Singularity",
+  "component.eldritchartifice.caged_singularity": "Caged Singularity",
+  "eldritchartifice.spell.caged_singularity": "Caged Singularity",
+  "eldritchartifice:components/caged_singularity": "Caged Singularity",
+  "eldritchartifice:caged_singularity": "Caged Singularity",
+  "eldritchartifice:caged_singularity.desc.duration": "How long the imprisoned gravity endures.",
+  "eldritchartifice:caged_singularity.desc.radius": "How far the field draws its victims.",
+  "eldritchartifice:caged_singularity.desc.magnitude": "How strongly the field pulls."
 }

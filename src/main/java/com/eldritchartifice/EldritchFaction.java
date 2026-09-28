@@ -42,7 +42,7 @@ public final class EldritchFaction extends BaseFaction {
 
     @Override
     public Item getTokenItem() {
-        return Factions.UNDEAD.getTokenItem();
+        return EldritchRelicRegistry.MARK;
     }
 
     @Override

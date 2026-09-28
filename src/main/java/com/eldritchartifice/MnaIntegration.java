@@ -26,10 +26,13 @@ final class MnaIntegration {
     private static final EldritchFaction ELDRITCH = new EldritchFaction();
     private static final DisplacementComponent DISPLACEMENT = new DisplacementComponent();
     private static final TimeWarpComponent TIME_WARP = new TimeWarpComponent();
+    private static final CagedSingularityComponent CAGED_SINGULARITY = new CagedSingularityComponent();
     private static final TeleportComponent TELEPORT = new TeleportComponent();
     private static final RitualEffectOpenEye OPEN_EYE_RITUAL = new RitualEffectOpenEye();
     private static final RitualEffectUnboundThreshold THRESHOLD_RITUAL = new RitualEffectUnboundThreshold();
     private static volatile boolean castingResourceRegistered;
+
+    static CagedSingularityComponent cagedSingularity() { return CAGED_SINGULARITY; }
 
     private MnaIntegration() {
     }
@@ -57,6 +60,7 @@ final class MnaIntegration {
                         helper.register(DisplacementComponent.ID, DISPLACEMENT);
                         helper.register(TimeWarpComponent.ID, TIME_WARP);
                         helper.register(TeleportComponent.ID, TELEPORT);
+                        helper.register(CagedSingularityComponent.ID, CAGED_SINGULARITY);
                         RuntimeLog.info(
                                 "Registered M&A spell components eldritchartifice:displacement, "
                                         + "eldritchartifice:time_warp, and eldritchartifice:teleport.");
