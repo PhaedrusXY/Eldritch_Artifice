@@ -2,7 +2,7 @@
 
 An experimental Eldritch faction addon for **Minecraft 1.20.1**, **Forge 47.4.10**, **Mana and Artifice 3.1.11**, and **Dimensional Doors 5.4.4**.
 
-**Current source and jar version:** `0.11.13-prototype`. The `beta0.10` label is a project milestone, not the jar's version number. The 0.11.13 update adds four tier 5 Eldrin Altar armor recipes and their Codex Arcana entries. See [release notes](RELEASE_NOTES.md).
+**Current source and jar version:** `0.11.13-prototype`. This update adds four tier 5 Eldrin Altar armor recipes and their Codex Arcana entries. See [release notes](RELEASE_NOTES.md).
 
 The repository tracks the editable Java sources, recipes, codex pages, textures, and Gradle build definition. It does not bundle the copyrighted Minecraft, Forge, M&A, or Dimensional Doors jars. Forge and the two mods are required to play.
 
