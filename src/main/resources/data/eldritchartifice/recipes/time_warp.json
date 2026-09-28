@@ -1,0 +1,17 @@
+{
+  "type": "mna:component",
+  "tier": 4,
+  "output": "eldritchartifice:time_warp",
+  "items": [
+    "minecraft:ender_pearl",
+    "dimdoors:enduring_fibers",
+    "dimdoors:liminal_lint",
+    "dimdoors:frayed_filament",
+    "dimdoors:stable_fabric"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/hourglass",
+    "mna:manaweave_patterns/knot4",
+    "mna:manaweave_patterns/diamond"
+  ]
+}

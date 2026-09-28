@@ -1,0 +1,19 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "eldritchartifice:lens_of_the_veil",
+  "requiredFaction": "eldritchartifice:eldritch",
+  "tier": 3,
+  "items": [
+    "minecraft:glass",
+    "minecraft:ender_eye",
+    "minecraft:amethyst_shard",
+    "minecraft:gold_ingot",
+    "dimdoors:stable_fabric"
+  ],
+  "patterns": [
+    "mna:circle",
+    "mna:diamond",
+    "mna:triangle",
+    "mna:circle"
+  ]
+}

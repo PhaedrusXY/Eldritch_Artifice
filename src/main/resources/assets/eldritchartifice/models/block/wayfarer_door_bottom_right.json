@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "eldritchartifice:block/wayfarer_door_bottom",
+    "top": "eldritchartifice:block/wayfarer_door_top"
+  }
+}

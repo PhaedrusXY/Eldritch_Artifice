@@ -1,0 +1,45 @@
+modLoader="javafml"
+loaderVersion="[47,48)"
+license="MIT"
+
+[[mods]]
+modId="eldritchartifice"
+version="0.11.13-prototype"
+displayName="Eldritch Artifice"
+authors="Prototype build"
+description='''
+An Eldritch faction addon prototype for Mana and Artifice with Dimensional Doors integration.
+This build adds normal progression recipes for the Eldritch spell components, the Rite of the Open
+Eye faction-joining ritual, and Open Eye armor integration with Dimensional Doors' monolith
+gaze-defying equipment tag. Full Open Eye armor also rejects Eldritch Watcher collection. Existing
+Teleport, Staff of the Open Way, Temporal Distortion, Displacement, Warp, Reserve overcasting,
+Watchers, devsetup, and Dimensional Doors integration remain included.
+'''
+
+[[dependencies.eldritchartifice]]
+modId="forge"
+mandatory=true
+versionRange="[47,48)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.eldritchartifice]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.eldritchartifice]]
+modId="mna"
+mandatory=true
+versionRange="[3.1.11,3.2)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.eldritchartifice]]
+modId="dimdoors"
+mandatory=true
+versionRange="[5.4.4,5.5)"
+ordering="AFTER"
+side="BOTH"

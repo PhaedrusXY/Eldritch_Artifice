@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "eldritchartifice:item/staff_of_the_open_way"
+  }
+}

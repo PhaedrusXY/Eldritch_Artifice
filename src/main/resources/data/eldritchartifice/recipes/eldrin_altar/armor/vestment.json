@@ -1,0 +1,27 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "eldritchartifice:eldritch_chestplate",
+  "tier": 5,
+  "requiredFaction": "eldritchartifice:eldritch",
+  "items": [
+    "minecraft:netherite_chestplate",
+    "dimdoors:stable_fabric",
+    "dimdoors:stable_fabric",
+    "dimdoors:world_thread",
+    "dimdoors:world_thread",
+    "minecraft:nether_star",
+    "minecraft:nether_star",
+    "mna:greater_mote_ender",
+    "mna:greater_mote_ender"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ENDER",
+      "amount": 2750
+    }
+  ],
+  "colors": [
+    9710409,
+    3216697
+  ]
+}

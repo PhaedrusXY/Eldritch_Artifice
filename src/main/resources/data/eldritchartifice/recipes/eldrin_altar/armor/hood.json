@@ -1,0 +1,31 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "eldritchartifice:eldritch_helmet",
+  "tier": 5,
+  "requiredFaction": "eldritchartifice:eldritch",
+  "items": [
+    "minecraft:netherite_helmet",
+    "dimdoors:stable_fabric",
+    "dimdoors:stable_fabric",
+    "dimdoors:rift_pearl",
+    "mna:greater_mote_ender",
+    "mna:rune_ender",
+    "mna:rune_defense",
+    "mna:rune_defense",
+    "mna:ritual_focus_greater"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ENDER",
+      "amount": 2750
+    },
+    {
+      "affinity": "ARCANE",
+      "amount": 1500
+    }
+  ],
+  "colors": [
+    9710409,
+    3216697
+  ]
+}

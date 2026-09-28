@@ -1,0 +1,17 @@
+{
+  "type": "mna:component",
+  "tier": 4,
+  "output": "eldritchartifice:teleport",
+  "items": [
+    "minecraft:ender_pearl",
+    "dimdoors:rift_pearl",
+    "dimdoors:enduring_fibers",
+    "dimdoors:stable_fabric",
+    "dimdoors:infrangible_fiber"
+  ],
+  "patterns": [
+    "mna:manaweave_patterns/knot",
+    "mna:manaweave_patterns/square",
+    "mna:manaweave_patterns/inverted_triangle"
+  ]
+}

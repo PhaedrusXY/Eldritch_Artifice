@@ -1,0 +1,114 @@
+{
+  "type": "mna:ritual",
+  "tier": 2,
+  "pattern": [
+    [
+      23,
+      24,
+      11,
+      0,
+      13,
+      26,
+      27
+    ],
+    [
+      22,
+      0,
+      -1,
+      -1,
+      -1,
+      0,
+      28
+    ],
+    [
+      0,
+      0,
+      10,
+      0,
+      14,
+      0,
+      0
+    ],
+    [
+      8,
+      9,
+      0,
+      30,
+      0,
+      15,
+      16
+    ],
+    [
+      0,
+      0,
+      3,
+      -1,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      19,
+      0,
+      5,
+      0
+    ],
+    [
+      1,
+      0,
+      20,
+      0,
+      18,
+      0,
+      6
+    ]
+  ],
+  "reagents": [
+    "F     F",
+    "   D   ",
+    "  S S  ",
+    " S E S ",
+    "  S S  ",
+    "   D   ",
+    "F     F"
+  ],
+  "keys": {
+    "E": {
+      "item": "minecraft:ender_pearl",
+      "optional": false,
+      "consume": true
+    },
+    "S": {
+      "item": "dimdoors:stable_fabric",
+      "optional": false,
+      "consume": true
+    },
+    "D": {
+      "item": "dimdoors:enduring_fibers",
+      "optional": false,
+      "consume": true
+    },
+    "F": {
+      "item": "dimdoors:frayed_filament",
+      "optional": false,
+      "consume": true
+    }
+  },
+  "manaweave": [
+    "mna:manaweave_patterns/circle",
+    "mna:manaweave_patterns/knot",
+    "mna:manaweave_patterns/diamond",
+    "mna:manaweave_patterns/inverted_triangle",
+    "mna:manaweave_patterns/knot4"
+  ],
+  "parameters": {
+    "innerColor": "0x12000F",
+    "outerColor": "0x8A0000",
+    "displayIndexes": false,
+    "connectBeam": false,
+    "beamColor": "0xB00020"
+  }
+}

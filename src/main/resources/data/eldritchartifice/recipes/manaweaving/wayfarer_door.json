@@ -1,0 +1,29 @@
+{
+  "type": "mna:manaweaving-recipe",
+  "output": "eldritchartifice:wayfarer_case",
+  "requiredFaction": "eldritchartifice:eldritch",
+  "tier": 3,
+  "items": [
+    "minecraft:dark_oak_door",
+    "minecraft:dark_oak_door",
+    "minecraft:ender_pearl",
+    "dimdoors:frayed_filament",
+    "dimdoors:frayed_filament",
+    "dimdoors:frayed_filament",
+    "dimdoors:frayed_filament",
+    "dimdoors:stable_fabric",
+    "dimdoors:eternal_fluid_bucket"
+  ],
+  "patterns": [
+    "mna:circle",
+    "mna:diamond",
+    "mna:triangle",
+    "mna:circle"
+  ],
+  "byproducts": [
+    {
+      "item": "minecraft:bucket",
+      "chance": 1.0
+    }
+  ]
+}

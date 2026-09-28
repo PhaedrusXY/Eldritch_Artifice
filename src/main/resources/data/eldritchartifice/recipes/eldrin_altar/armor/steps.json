@@ -1,0 +1,31 @@
+{
+  "type": "mna:eldrin-altar",
+  "output": "eldritchartifice:eldritch_boots",
+  "tier": 5,
+  "requiredFaction": "eldritchartifice:eldritch",
+  "items": [
+    "minecraft:netherite_boots",
+    "dimdoors:stable_fabric",
+    "dimdoors:stable_fabric",
+    "dimdoors:world_thread",
+    "dimdoors:world_thread",
+    "mna:greater_mote_ender",
+    "mna:rune_ender",
+    "mna:rune_air",
+    "dimdoors:rift_pearl"
+  ],
+  "power_requirements": [
+    {
+      "affinity": "ENDER",
+      "amount": 2750
+    },
+    {
+      "affinity": "WIND",
+      "amount": 1500
+    }
+  ],
+  "colors": [
+    9710409,
+    3216697
+  ]
+}

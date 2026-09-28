@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "eldritchartifice:eldritch_helmet",
+    "eldritchartifice:eldritch_chestplate",
+    "eldritchartifice:eldritch_leggings",
+    "eldritchartifice:eldritch_boots"
+  ]
+}

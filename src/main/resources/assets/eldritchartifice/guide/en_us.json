@@ -1,0 +1,576 @@
+{
+  "eldritchartifice:faction": {
+    "index": 80,
+    "category": "basics",
+    "tier": 2,
+    "sections": [
+      {
+        "type": "title",
+        "value": "The Eldritch"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The world is not seamless. Beyond its folds, something notices those who look back. The Eldritch study these openings, drawing upon a reserve that ordinary magic leaves untouched."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I do not join the Eldritch as I might join a court or council. I complete my studies of the second tier, then perform the Ritual of Gate and Key and draw their attention. The gaze opens a deeper well of power, but leaves a mark that time cannot erase."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Not every presence beyond the veil can be confronted. Azathoth remains distant, beyond the reach of any challenge I could offer."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:open_eye": {
+    "index": 81,
+    "category": "rituals",
+    "tier": 2,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Ritual of Gate and Key"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I have delved to the very edges of reality and wondered what lies outside them. I have devised a rite to let me see. Every court, council, and covenant forbids this inquiry. Away from a bound doorway, the Ritual of Gate and Key opens a narrow audience with the Eye. Once I complete my studies of the second tier, its attention can carry me into the third. I need not surrender an existing allegiance first; the Eye will make that choice for me. If I am already more learned, its first gaze will not advance my studies."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Those I once called allies will no longer claim me. A former faction remembers the breach, and its ire deepens with the height I reached in its service. It may send hunters after me. Knowledge already learned remains mine, though its further teachings are closed. When the Oculus shows my present studies are complete, another audience carries me from the third tier to the fourth, or from the fourth to the fifth. Each rite opens only one threshold. Before I am ready, the Eye merely acknowledges me. These later audiences do not deepen the scar of the first gaze."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "If I draw the circle within sixteen paces of a bound doorway, the rite calls forth the hostile manifestation of Yog-Sothoth instead. The doorway must be whole and dormant. Such a challenge brings neither allegiance nor advancement, and even a mage able to perform the rite may be ill prepared to survive it."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "In a peaceful audience, an eye peers through a narrow opening, regards its caller, and withdraws. I have reached only the fifth tier through these audiences; beyond it, the Eye offers recognition rather than further instruction."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "eldritchartifice:rituals/open_eye"
+      }
+    ]
+  },
+  "eldritchartifice:reserve": {
+    "index": 82,
+    "category": "basics",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Mana and the Reserve"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Eldritch allegiance doubles the mana I can hold. The deeper half is the Reserve: power drawn from beyond the familiar boundaries of magic."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Once I spend the ordinary half, further casting draws upon the Reserve without any separate invocation. This increases transient Warp and the strain upon my surroundings. In a prolonged struggle, I must watch how deeply I draw."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:warp": {
+    "index": 83,
+    "category": "basics",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Warp and Attention"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Contact with what lies beyond leaves Warp upon the mind. Its transient traces fade with time. Lingering traces endure, while permanent Warp is a scar that does not heal. My initiation leaves the first such scar."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Pressure is the immediate strain of this contact. Exposure grows through dangerous encounters with Limbo and the presence beyond it. Neither distance nor silence should be mistaken for being unnoticed."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "As instability grows, a Watcher may appear. Conserving mana and allowing the Reserve to rest limits the strain I create."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:watchers": {
+    "index": 84,
+    "category": "basics",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Watchers"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "A Watcher appears to the one it has chosen; my companions cannot see the gaze that follows me. It yields no spoils. As its eye opens, the danger grows: if I allow its attention to settle upon me, it may carry me into Limbo."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I must break its gaze and seek cover. These pursuing Watchers do not follow me into Limbo, though that place has dangers of its own."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Wearing every piece of the Vestments of the Open Eye prevents a pursuing Watcher from taking me. I should not mistake this protection for safety from everything that dwells beyond the veil."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:displacement": {
+    "index": 85,
+    "category": "sorcery",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Displacement"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Displacement folds space when a direct attack would strike me. If a safe resting place lies nearby, I slip aside and escape the blow. If there is nowhere safe to go, the ward cannot save me, though its unused protection remains."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "An unmodified ward lasts one minute and permits one escape. Duration sustains it longer; Magnitude allows as many as four escapes. Lesser Magnitude is not strong enough to grant an additional escape."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The ward responds to an assailant, not to fire, a fall, or other hazards of the world. Its inscription calls for strange materials gathered from the spaces between worlds."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "eldritchartifice:displacement"
+      }
+    ]
+  },
+  "eldritchartifice:time_warp": {
+    "index": 86,
+    "category": "sorcery",
+    "tier": 4,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Time Warp"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I can disturb the flow of time around a place or a bearer. Allies move and work more swiftly, while hostile creatures find their movements and labor slowed. Creatures belonging to neither side are unaffected."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The distortion catches those within reach at the moment of casting and clings to them even as they depart. Late arrivals remain untouched. Duration prolongs its hold, Radius widens the initial reach, and Magnitude strengthens its influence."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "eldritchartifice:time_warp"
+      }
+    ]
+  },
+  "eldritchartifice:teleport": {
+    "index": 87,
+    "category": "sorcery",
+    "tier": 4,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Teleport"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "A Rune of Marking or the chosen destination in a Book of Marks gives this spell a path to follow. If a safe arrival is possible, the path can cross between worlds, even out of Limbo."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I may carry living creatures along the marked path as well. The strength of the spell must be sufficient for its subject."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "eldritchartifice:teleport"
+      }
+    ]
+  },
+  "eldritchartifice:armor": {
+    "index": 88,
+    "category": "artifice",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Vestments of the Open Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The Hood, Vestment, Wraps, and Steps of the Open Eye form a single ward when worn together. They offer substantial protection and sustain a powerful Time Warp around me, reaching six paces."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The complete vestments can fold me aside from an incoming attack. After an escape, their protection takes fifteen seconds to gather again. A Displacement spell expends its own protection first. The vestments also deny a pursuing Watcher its claim upon me."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I set a piece of netherite armor among stable fabric, world thread, and signs of the Ender current. The Eldrin Altar draws that current through the offerings, binding each part of the vestments to the same unseen seam. The hood fixes the gaze; the vestment bears the heart of the ward; the wraps hold fast against the ground; the steps follow paths that should not meet."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The four workings each demand a deep Ender wellspring. The hood also draws Arcane power, the wraps Earth, and the steps Wind. I must bind each piece separately before the vestments answer as one."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/hood"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/vestment"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/wraps"
+      },
+      {
+        "type": "eldrin_altar",
+        "location": "eldritchartifice:eldrin_altar/armor/steps"
+      }
+    ]
+  },
+  "eldritchartifice:staff": {
+    "index": 89,
+    "category": "artifice",
+    "tier": 5,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Staff of the Open Way"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "This staff remembers eight places. I can select one of these anchors through its radial menu, bind my present location while crouching, or open a passage to a place already remembered. The passage permits travel in both directions."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "An opening lasts about thirty seconds and requires 150 mana. It can cross between worlds, even from Limbo, so long as there is room to arrive safely. The staff keeps its own memories and needs no separate mark."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "To choose an anchor, I use the radial-menu key while holding the staff. Crouching while using it records the selected anchor; using it while standing opens the way."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:shoggoth": {
+    "index": 91,
+    "tier": 2,
+    "category": "rituals",
+    "sections": [
+      {
+        "type": "title",
+        "value": "Yog-Sothoth, the Gate and the Key"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "At a bound doorway, the Ritual of Gate and Key tears open the threshold. An eye and reaching tendrils emerge: a manifestation of Yog-Sothoth. I must draw the circle within sixteen paces of the doorway to call it forth."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Away from the doorway, the same rite asks for an audience. Here, it invites a struggle. Fighting the manifestation does not grant me its teachings or its allegiance."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Distant attacks are lost in the folds around the rift. To wound the manifestation, I must enter its dangerous heart, within three paces. I must release my missiles there and remain until they strike. Its pull reaches fourteen paces; when the rift tightens, a stronger inward surge is gathering."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The heart of the rift wounds those who linger within it. Neither invisibility nor allegiance conceals me from its hunger, and nearby creatures are drawn in as well."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Victory closes the opening; Yog-Sothoth remains beyond it. If every challenger withdraws farther than thirty-two paces for ten seconds, the manifestation recedes and the torn ground and doorway return. When called again, it comes with its strength renewed."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The rift may wrench nearby stone and earth from their places. I should give the doorway room and keep my possessions elsewhere before beginning the challenge."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "ritual",
+        "location": "eldritchartifice:rituals/open_eye"
+      }
+    ]
+  },
+  "eldritchartifice:grimoire": {
+    "index": 92,
+    "category": "artifice",
+    "tier": 4,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Grimoire of the Unseen"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The volume in my hand is only the near face of a book that lies beyond the veil. Its pages remember the spells I entrust to them, even when the cover is lost or destroyed. I need only call it forth again."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "In the third tier I may summon an ordinary grimoire. In the fourth, the faction-grimoire cantrip calls the Grimoire of the Unseen."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Both volumes open onto the same pages of my own grimoire. Spells already entrusted to one remain within the other. Another mage who finds the cover cannot read my collection through it. Recalling the book does not multiply the spells held within."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I arrange its spells with the same controls used for other grimoires, and choose among them through the spell-book wheel. The pages endure; a newly summoned cover may open to a different place."
+          }
+        ]
+      }
+    ]
+  },
+  "eldritchartifice:lens_of_the_veil": {
+    "index": 93,
+    "category": "artifice",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Lens of the Veil"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Glass alone shows the face. Bound to an eye of the End and cloth from between worlds, it reveals what has gathered behind that face. I have learned to distinguish fleeting traces, lingering stains and the scars that time cannot soften."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I hold the lens and use it to examine my reflection, the strain upon the veil and the attention reaching through it. Crouching as I look brings the individual traces into focus. It reveals only my own condition; it neither cleanses Warp nor conceals me from what watches."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "This working belongs to the Eldritch and is within reach of the third tier. Completing it upon the Manaweaving Altar demonstrates my study of a faction artifact."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "eldritchartifice:manaweaving/lens_of_the_veil"
+      }
+    ]
+  },
+  "eldritchartifice:wayfarer_doors": {
+    "index": 94,
+    "category": "artifice",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Wayfarer's Doors"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I have bound two thresholds to one wandering thread. Their watchful gaze parts the way. A measure of Limbo's eternal fluid binds their wandering thread to the waking world. Open the traveling case in hand, then set each door upon firm ground. While both stand, stepping through either leads to its companion, even across worlds. You'll owlways have a way home."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "To fold a standing door, crouch and touch it with an empty hand. Its companion waits in silence until the traveler unfolds it again. Fold both into the same satchel, and they become one case; open it in hand to separate them again. Only one pair may answer to a keeper. If a door is lost, a fresh case used while crouching calls back the folded end and stills any older copy. Leave clear footing beyond both faces of the threshold. These narrow paths carry unmounted travelers, and yield to wards that forbid passage."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "I have ceased asking how far I am from home. The more useful question is which side of the door I am standing on."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "manaweaving_altar",
+        "location": "eldritchartifice:manaweaving/wayfarer_door"
+      }
+    ]
+  }
+}
