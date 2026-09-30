@@ -28,7 +28,7 @@ final class CagedSingularityService {
         for (Iterator<Field> iterator=FIELDS.iterator();iterator.hasNext();) {
             Field f=iterator.next();
             if (clock>=f.expires) {iterator.remove();continue;}
-            ShoggothService.ring(f.level,f.center,f.radius,"minecraft:reverse_portal");
+            if (clock%8 == 0) renderSphere(f);
             for (Object entity:ShoggothService.nearby(f.level,f.center,f.radius)) {
                 if (ShoggothService.uuid(entity).equals(f.caster) || ShoggothService.marked(entity)) continue;
                 if (RuntimeMinecraft.isServerPlayer(entity) && !ShoggothService.eligible(entity)) continue;
@@ -39,6 +39,42 @@ final class CagedSingularityService {
                 ShoggothService.pull(entity,f.center,f.strength);
             }
         }
+    }
+    private static Object blackDust;
+    private static Object purpleDust;
+    private static Object dust(float red, float green, float blue, float scale) {
+        try {
+            Class<?> vector = Class.forName("org.joml.Vector3f");
+            Object color = vector.getConstructor(float.class,float.class,float.class)
+                .newInstance(red,green,blue);
+            return Class.forName("net.minecraft.core.particles.DustParticleOptions")
+                .getConstructor(vector,float.class).newInstance(color,scale);
+        } catch (ReflectiveOperationException ex) { throw new IllegalStateException(ex); }
+    }
+    /** A compact dark core and a purple surface shimmer, with a fixed particle budget. */
+    private static void renderSphere(Field f) {
+        if (blackDust == null) {
+            blackDust = dust(0.001f,0.001f,0.002f,2.0f);
+            purpleDust = dust(0.42f,0.06f,0.72f,0.65f);
+        }
+        double pulse = 0.58 + 0.06*Math.sin(clock*0.16);
+        // Evenly distribute the core over a sphere; rotation makes the rim shimmer.
+        for (int i=0;i<24;i++) {
+            double y = 1.0-2.0*(i+0.5)/24.0;
+            double radial = Math.sqrt(1.0-y*y);
+            double angle = i*2.399963229728653 + clock*0.025;
+            emit(f,blackDust,pulse*radial*Math.cos(angle),pulse*y,pulse*radial*Math.sin(angle));
+        }
+        for (int i=0;i<8;i++) {
+            double angle = i*Math.PI/4 + clock*0.09;
+            double y = 0.45*Math.sin(angle*2 + clock*0.04);
+            double radial = Math.sqrt(Math.max(0,pulse*pulse-y*y));
+            emit(f,purpleDust,radial*Math.cos(angle),y,radial*Math.sin(angle));
+        }
+    }
+    private static void emit(Field f,Object particle,double x,double y,double z) {
+        ShoggothService.call(f.level,"sendParticles|m_8767_",particle,
+            f.center[0]+x,f.center[1]+y,f.center[2]+z,1,0d,0d,0d,0d);
     }
     static void clear() { FIELDS.clear();clock=0; }
 }

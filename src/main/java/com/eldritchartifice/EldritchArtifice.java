@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.11.15-prototype";
+    public static final String VERSION = "0.11.16-alpha";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
