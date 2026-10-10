@@ -95,7 +95,7 @@ final class WatcherService {
         if (spawnFor(player, false)) {
             RuntimeLog.info(
                     "A Watcher manifested for " + RuntimeMinecraft.playerDebugName(player)
-                            + " from automatic Warp pressure.");
+                            + " from automatic Fray pressure.");
         }
     }
 

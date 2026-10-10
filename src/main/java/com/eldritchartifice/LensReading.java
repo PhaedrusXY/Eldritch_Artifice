@@ -6,15 +6,15 @@ final class LensReading {
 
     static String describe(WarpState state, boolean detailed) {
         if (detailed) {
-            return "Within your reflection: " + state.transientWarp + " fleeting traces, "
-                    + state.lingeringWarp + " lingering stains, and " + state.permanentWarp
-                    + " lasting scars.\nPressure upon the veil: " + state.pressure
+            return "Fray within your reflection: " + state.transientWarp + " fleeting frayed threads, "
+                    + state.lingeringWarp + " lingering loose threads, and " + state.permanentWarp
+                    + " permanently severed threads.\nPressure upon the veil: " + state.pressure
                     + ". Attention beyond it: " + state.exposure + ".";
         }
-        String warp = state.totalWarp() == 0 ? "Your reflection is unmarked."
-                : state.totalWarp() < 20 ? "Fine distortions cling to your reflection."
-                : state.totalWarp() < 50 ? "Your reflection no longer follows you faithfully."
-                : "Something unfamiliar looks back through your reflection.";
+        String warp = state.totalWarp() == 0 ? "Your reflection is solid, firmly tethered to reality."
+                : state.totalWarp() < 20 ? "Fine frayed threads trail from your reflection; your outline is less solid."
+                : state.totalWarp() < 50 ? "Your reflection flickers, its tether to reality wearing thin."
+                : "Your reflection is scarcely solid; something beyond reality watches through its unraveling threads.";
         String pressure = state.pressure == 0 ? "The veil lies still."
                 : state.pressure < 50 ? "A faint strain troubles the veil."
                 : state.pressure < 120 ? "The veil trembles under gathering strain."

@@ -2,7 +2,7 @@
 
 An experimental Eldritch faction addon for **Minecraft 1.20.1**, **Forge 47.4.5 or newer in the 47.x series**, **Mana and Artifice 3.1.11**, and **Dimensional Doors 5.4.4**. Install the dependencies required by M&A and Dimensional Doors as well.
 
-**Current source and jar version:** `0.12.1-alpha`. Integrates the tested Unseen Eye 0.2.2 companion into the main mod and alphabetizes the five Eldritch spell components alongside M&A components in the Codex. The mana bar now shades the Warp-generating reserve purple, with a boundary marker. See [release notes](RELEASE_NOTES.md) and [validation and smoke tests](VALIDATION.md).
+**Current source and jar version:** `0.12.2-alpha`. Renames the instability mechanic to Fray: contact with the beyond makes the caster less solid and less tethered to reality. Existing mechanics and save identifiers are preserved. Integrates the tested Unseen Eye 0.2.2 companion into the main mod and alphabetizes the five Eldritch spell components alongside M&A components in the Codex. The mana bar now shades the Fray-generating reserve purple, with a boundary marker. See [release notes](RELEASE_NOTES.md) and [validation and smoke tests](VALIDATION.md).
 
 This remains an Alpha release while the planned sanctum work is incomplete. The repository includes editable Java sources, recipes, codex pages, textures, and the Gradle build definition. Dependencies are downloaded for building and are not included in the released jar.
 
@@ -15,7 +15,7 @@ Install Java 17, then run:
 python3 scripts/check_release.py
 ```
 
-On Windows, use `gradlew.bat build --no-daemon`. The wrapper uses Gradle 8.6. The packaging check requires Python 3.11 or newer. The installable, reobfuscated jar is `build/libs/eldritchartifice-0.12.1-alpha.jar`. GitHub Actions runs the build and packaging checks on pushes and pull requests.
+On Windows, use `gradlew.bat build --no-daemon`. The wrapper uses Gradle 8.6. The packaging check requires Python 3.11 or newer. The installable, reobfuscated jar is `build/libs/eldritchartifice-0.12.2-alpha.jar`. GitHub Actions runs the build and packaging checks on pushes and pull requests.
 
 The corrected 0.12.1 build has passed an isolated dedicated-server startup, world save, and clean shutdown. It supersedes the startup-broken 0.12.0 candidate; client gameplay and upgraded-world tests remain pending.
 
@@ -25,7 +25,7 @@ This version builds the complete source against the actual Forge/M&A/Dimensional
 
 1. End any active Unseen Eye session (`/unseeneye stop`), stop the game/server, and back up the existing world.
 2. Remove the previous Eldritch Artifice jar **and** any standalone `eldritch-unseen-eye-*-test.jar` from both client and server.
-3. Install the same `eldritchartifice-0.12.1-alpha.jar` on both sides and restart. Do not install both the combined and standalone mods.
+3. Install the same `eldritchartifice-0.12.2-alpha.jar` on both sides and restart. Do not install both the combined and standalone mods.
 4. Follow the focused tests in [VALIDATION.md](VALIDATION.md) before updating the live servers or publishing the CurseForge file.
 
 The integrated spell keeps `eldritcheye:unseen_eye`, its recipe ID, and the existing codex entry IDs to preserve crafted spells and guide progress. Forge may ask for confirmation when the standalone mod disappears from an existing world's mod list; test a backup first. No world reset is required by this change.

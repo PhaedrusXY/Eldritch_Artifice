@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.12.1-alpha";
+    public static final String VERSION = "0.12.2-alpha";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
@@ -232,7 +232,7 @@ public final class EldritchArtifice {
         }
 
         RuntimeLog.info(
-                "Prototype Warp, M&A, Watcher, Displacement, Time Warp, Teleport, Tier-5 armor, "
+                "Prototype Fray, M&A, Watcher, Displacement, Time Warp, Teleport, Tier-5 armor, "
                         + "and Staff of the Open Way hooks registered.");
     }
 

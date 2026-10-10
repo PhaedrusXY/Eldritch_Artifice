@@ -1,3 +1,12 @@
+# Eldritch Artifice 0.12.2 alpha
+
+- Renamed the player-facing instability mechanic from Warp to Fray. Contact with the beyond makes the caster less solid and less tethered to reality.
+- Updated the Codex, Reserve warning, Lens of the Veil readings, command feedback and diagnostic labels to use the new terminology.
+- This is a descriptive change: existing Fray amounts, effects, save keys, API names, guide IDs and commands are preserved. The temporal spell remains named Time Warp.
+- Armor balancing remains a separate modpack-only KubeJS script; no armor stat changes are included.
+
+---
+
 # Eldritch Artifice 0.12.1 alpha
 
 - Fixes a startup-blocking mixin package error in the unreleased 0.12.0 candidate. All mixins now live in a dedicated package, so normal mod classes can load.

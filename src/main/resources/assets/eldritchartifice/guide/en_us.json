@@ -104,7 +104,7 @@
         "type": "text",
         "json": [
           {
-            "text": "Once I spend the ordinary half, further casting draws upon the Reserve without any separate invocation. This increases transient Warp and the strain upon my surroundings. In a prolonged struggle, I must watch how deeply I draw."
+            "text": "Once I spend the ordinary half, further casting draws upon the Reserve without any separate invocation. This increases transient Fray: I become less solid and less firmly tethered to reality, while the strain upon my surroundings grows. In a prolonged struggle, I must watch how deeply I draw."
           }
         ]
       },
@@ -112,7 +112,7 @@
         "type": "text",
         "json": [
           {
-            "text": "The purple-shaded portion of the mana bar marks the Reserve. A small notch shows its boundary; the color deepens toward empty. Spending past that boundary generates Warp."
+            "text": "The purple-shaded portion of the mana bar marks the Reserve. A small notch shows its boundary; the color deepens toward empty. Spending past that boundary generates Fray."
           }
         ]
       }
@@ -125,13 +125,13 @@
     "sections": [
       {
         "type": "title",
-        "value": "Warp and Attention"
+        "value": "Fray and Attention"
       },
       {
         "type": "text",
         "json": [
           {
-            "text": "Contact with what lies beyond leaves Warp upon the mind. Its transient traces fade with time. Lingering traces endure, while permanent Warp is a scar that does not heal. My initiation leaves the first such scar."
+            "text": "Contact with what lies beyond frays the threads that bind me to reality. As Fray deepens, I become less solid and less firmly tethered to the world. Transient Fray fades with time. Lingering Fray endures, while permanent Fray leaves threads that never fully mend. My initiation loosens the first of these ties."
           }
         ]
       },
@@ -147,7 +147,7 @@
         "type": "text",
         "json": [
           {
-            "text": "As instability grows, a Watcher may appear. Conserving mana and allowing the Reserve to rest limits the strain I create."
+            "text": "As my tether weakens, a Watcher may appear. Conserving mana and allowing the Reserve to rest limits the strain I create."
           }
         ]
       }
@@ -526,7 +526,7 @@
         "type": "text",
         "json": [
           {
-            "text": "I hold the lens and use it to examine my reflection, the strain upon the veil and the attention reaching through it. Crouching as I look brings the individual traces into focus. It reveals only my own condition; it neither cleanses Warp nor conceals me from what watches."
+            "text": "I hold the lens and use it to examine my reflection, the strain upon the veil and the attention reaching through it. Crouching as I look brings the individual traces into focus. It reveals only my own condition; it neither mends Fray nor conceals me from what watches."
           }
         ]
       },
