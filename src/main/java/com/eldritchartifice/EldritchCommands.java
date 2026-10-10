@@ -59,11 +59,11 @@ final class EldritchCommands {
             });
             addSubcommand(root, "lingering5", player -> {
                 EldritchApi.addLingeringWarp(player, 5, "debug_command");
-                RuntimeMinecraft.sendMessage(player, "[Eldritch] Added 5 Lingering Warp.");
+                RuntimeMinecraft.sendMessage(player, "[Eldritch] Added 5 Lingering Fray.");
             });
             addSubcommand(root, "permanent1", player -> {
                 EldritchApi.addPermanentWarp(player, 1, "debug_command");
-                RuntimeMinecraft.sendMessage(player, "[Eldritch] Added 1 Permanent Warp.");
+                RuntimeMinecraft.sendMessage(player, "[Eldritch] Added 1 Permanent Fray.");
             });
             addSubcommand(root, "forceevent", WarpService::forceEvent);
             addSubcommand(root, "faction", player ->
@@ -198,12 +198,12 @@ final class EldritchCommands {
                 WarpService.clear(player);
                 RuntimeMinecraft.sendMessage(
                         player,
-                        "[Eldritch] Warp, Pressure, and Exposure cleared.");
+                        "[Eldritch] Fray, Pressure, and Exposure cleared.");
             });
             addSubcommand(root, "cleartransient", player -> {
                 WarpService.clearTransient(player);
                 RuntimeMinecraft.sendMessage(player,
-                        "[Eldritch] Transient Warp and Pressure cleared; lingering and permanent marks remain.");
+                        "[Eldritch] Transient Fray and Pressure cleared; lingering and permanent frayed threads remain.");
             });
 
             Method register = dispatcher.getClass().getMethod(

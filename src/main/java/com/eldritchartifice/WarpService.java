@@ -55,7 +55,7 @@ final class WarpService {
         SESSIONS.put(player, state);
         STORE.save(player, state);
 
-        RuntimeLog.info("Loaded Warp state for "
+        RuntimeLog.info("Loaded Fray state for "
                 + RuntimeMinecraft.playerDebugName(player)
                 + ": " + statusLine(state));
     }
@@ -149,7 +149,7 @@ final class WarpService {
             return;
         }
         if (amount <= 0) {
-            throw new IllegalArgumentException("Warp amount must be positive.");
+            throw new IllegalArgumentException("Fray amount must be positive.");
         }
 
         WarpState state = state(player);
@@ -170,7 +170,7 @@ final class WarpService {
 
         RuntimeLog.info(RuntimeMinecraft.playerDebugName(player)
                 + " gained " + amount + " " + kind.name().toLowerCase()
-                + " Warp from " + source
+                + " Fray from " + source
                 + " (pressure +" + pressureGain + ").");
     }
 
@@ -229,7 +229,7 @@ final class WarpService {
     }
 
     static String statusLine(WarpState state) {
-        return "transient=" + state.transientWarp
+        return "Fray: transient=" + state.transientWarp
                 + ", lingering=" + state.lingeringWarp
                 + ", permanent=" + state.permanentWarp
                 + ", total=" + state.totalWarp()
@@ -319,7 +319,7 @@ final class WarpService {
 
         String message = pool[ThreadLocalRandom.current().nextInt(pool.length)];
         RuntimeMinecraft.sendMessage(player, message);
-        RuntimeLog.info("Warp event for "
+        RuntimeLog.info("Fray event for "
                 + RuntimeMinecraft.playerDebugName(player)
                 + ": " + message);
     }
