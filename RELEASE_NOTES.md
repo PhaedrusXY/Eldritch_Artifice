@@ -1,3 +1,13 @@
+# Eldritch Artifice 0.12.2 alpha
+
+- Increased Tier-5 Vestments of the Open Eye defenses from 18 armor / 2 toughness to 24 armor / 12 toughness, matching the pack's boosted Demon and Undead faction sets.
+- Hood: 5 armor, Vestment: 9, Wraps: 7, Steps: 3. Each piece provides 3 toughness.
+- Existing set abilities, durability, enchantability, repair material, knockback resistance, item IDs, and recipes are unchanged. Existing pieces receive the new base defenses when loaded with this version.
+- Updated the armor Codex description to show the complete set's defenses.
+- Includes the Unseen Eye, Codex ordering, mana reserve HUD, and startup fixes from 0.12.1.
+
+---
+
 # Eldritch Artifice 0.12.1 alpha
 
 - Fixes a startup-blocking mixin package error in the unreleased 0.12.0 candidate. All mixins now live in a dedicated package, so normal mod classes can load.

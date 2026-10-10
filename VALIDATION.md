@@ -1,3 +1,10 @@
+# 0.12.2-alpha armor update
+
+- Requested balance reference: the pack author's `mna_faction_armor_balance(2).js`. Demon and Undead both provide 24 armor / 12 toughness, with armor distributed 5 / 9 / 7 / 3 and 3 toughness per piece. Eldritch now matches those values.
+- Change scope: armor material values, Codex description, release version and documentation. Existing item IDs, special abilities, durability, knockback resistance and recipes are preserved.
+- In-game check: equip the complete set without other armor modifiers and inspect `/attribute @s minecraft:generic.armor get` (24) and `/attribute @s minecraft:generic.armor_toughness get` (12). Check an existing enchanted piece as well as freshly given armor.
+- October 10 pack-author feedback on 0.12.1: successful boot, inscription-table spell creation, Unseen Eye play, staff-enabled portal creation, Codex ordering, reserve HUD visuals, and eye traversal of a same-dimension staff portal. Portal traversal was reported successful after the proposed test; the precise magnitude variant was not specified. Iron's cross-dimensional portal ended the spell; suitcase traversal did not occur. Cross-dimensional eye travel remains unsupported.
+
 # 0.12.1-alpha validation
 
 ## Completed

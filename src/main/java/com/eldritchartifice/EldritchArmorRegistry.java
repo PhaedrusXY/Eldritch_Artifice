@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegisterEvent;
 /**
  * Tier-5 Eldritch armor item registration.
  *
- * <p>The standalone balance target is 18 total armor and 2 total toughness. The worn texture uses
+ * <p>The balance target is 24 total armor and 12 total toughness. The worn texture uses
  * the crimson Open Eye vestment identity while preserving stable save IDs.</p>
  */
 final class EldritchArmorRegistry {

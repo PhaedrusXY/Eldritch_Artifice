@@ -9,8 +9,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 /**
  * Standalone balance target for the Tier-5 Eldritch set.
  *
- * <p>The set deliberately sits below M&A's Bone/Undead armor in raw armor points while matching
- * its total toughness. Its strength comes from Temporal Distortion and Spatial Displacement.</p>
+ * <p>Matches the pack's boosted Demon and Undead sets: 24 armor and 12 toughness in total.
+ * Temporal Distortion and Spatial Displacement provide the set's distinct abilities.</p>
  */
 final class EldritchArmorMaterial implements ArmorMaterial {
     static final EldritchArmorMaterial INSTANCE = new EldritchArmorMaterial();
@@ -34,10 +34,10 @@ final class EldritchArmorMaterial implements ArmorMaterial {
     @Override
     public int getDefenseForType(ArmorItem.Type type) {
         return switch (type.name()) {
-            case "HELMET" -> 3;
-            case "CHESTPLATE" -> 7;
-            case "LEGGINGS" -> 6;
-            case "BOOTS" -> 2;
+            case "HELMET" -> 5;
+            case "CHESTPLATE" -> 9;
+            case "LEGGINGS" -> 7;
+            case "BOOTS" -> 3;
             default -> 0;
         };
     }
@@ -64,7 +64,7 @@ final class EldritchArmorMaterial implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 0.5F;
+        return 3.0F;
     }
 
     @Override
