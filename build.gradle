@@ -2,10 +2,10 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '6.0.54'
 }
 
-version = '0.11.16-alpha'
+version = '0.12.0-alpha'
 group = 'com.eldritchartifice'
 
 base {
@@ -49,9 +49,8 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
-    compileOnly fg.deobf('curse.maven:mana-and-artifice-406360:6847816')
-    runtimeOnly fg.deobf('curse.maven:mana-and-artifice-406360:6847805')
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.5'
+    implementation fg.deobf('curse.maven:mana-and-artifice-406360:6847805')
     implementation fg.deobf('curse.maven:dimensionaldoors-284876:6421500')
 }
 
@@ -63,7 +62,8 @@ tasks.named('jar', Jar).configure {
                 'Specification-Version'   : '1',
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.jar.archiveVersion,
-                'Implementation-Vendor'   : 'Eldritch Artifice'
+                'Implementation-Vendor'   : 'Eldritch Artifice',
+                'MixinConfigs'            : 'eldritchartifice.mixins.json'
         ])
     }
     finalizedBy 'reobfJar'
@@ -71,4 +71,11 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+// Forge supplies Maven POMs; do not require optional Gradle module metadata.
+repositories.configureEach { repo ->
+    if (repo instanceof MavenArtifactRepository && repo.url.toString().contains('minecraftforge.net')) {
+        repo.metadataSources { mavenPom(); artifact(); ignoreGradleMetadataRedirection() }
+    }
 }

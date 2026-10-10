@@ -21,7 +21,7 @@ final class EldritchArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public int m_266425_(ArmorItem.Type type) {
+    public int getDurabilityForType(ArmorItem.Type type) {
         return switch (type.name()) {
             case "HELMET" -> 13 * DURABILITY_FACTOR;
             case "CHESTPLATE" -> 15 * DURABILITY_FACTOR;
@@ -32,7 +32,7 @@ final class EldritchArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public int m_7366_(ArmorItem.Type type) {
+    public int getDefenseForType(ArmorItem.Type type) {
         return switch (type.name()) {
             case "HELMET" -> 3;
             case "CHESTPLATE" -> 7;
@@ -43,32 +43,32 @@ final class EldritchArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public int m_6646_() {
+    public int getEnchantmentValue() {
         return 15;
     }
 
     @Override
-    public SoundEvent m_7344_() {
-        return MAArmorMaterial.BONE.m_7344_();
+    public SoundEvent getEquipSound() {
+        return MAArmorMaterial.BONE.getEquipSound();
     }
 
     @Override
-    public Ingredient m_6230_() {
-        return MAArmorMaterial.BONE.m_6230_();
+    public Ingredient getRepairIngredient() {
+        return MAArmorMaterial.BONE.getRepairIngredient();
     }
 
     @Override
-    public String m_6082_() {
+    public String getName() {
         return "eldritchartifice:open_eye";
     }
 
     @Override
-    public float m_6651_() {
+    public float getToughness() {
         return 0.5F;
     }
 
     @Override
-    public float m_6649_() {
+    public float getKnockbackResistance() {
         return 0.0F;
     }
 }

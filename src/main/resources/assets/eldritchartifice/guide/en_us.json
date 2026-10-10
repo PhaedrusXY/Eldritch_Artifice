@@ -107,6 +107,14 @@
             "text": "Once I spend the ordinary half, further casting draws upon the Reserve without any separate invocation. This increases transient Warp and the strain upon my surroundings. In a prolonged struggle, I must watch how deeply I draw."
           }
         ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The purple-shaded portion of the mana bar marks the Reserve. A small notch shows its boundary; the color deepens toward empty. Spending past that boundary generates Warp."
+          }
+        ]
       }
     ]
   },
@@ -181,7 +189,7 @@
     ]
   },
   "eldritchartifice:displacement": {
-    "index": 85,
+    "index": 2,
     "category": "sorcery",
     "tier": 3,
     "sections": [
@@ -222,7 +230,7 @@
     ]
   },
   "eldritchartifice:time_warp": {
-    "index": 86,
+    "index": 2,
     "category": "sorcery",
     "tier": 4,
     "sections": [
@@ -255,7 +263,7 @@
     ]
   },
   "eldritchartifice:teleport": {
-    "index": 87,
+    "index": 2,
     "category": "sorcery",
     "tier": 4,
     "sections": [
@@ -580,7 +588,7 @@
     ]
   },
   "eldritchartifice:caged_singularity": {
-    "index": 95,
+    "index": 2,
     "category": "sorcery",
     "tier": 5,
     "sections": [
@@ -735,6 +743,63 @@
       {
         "type": "eldrin_altar",
         "location": "eldritchartifice:eldrin_altar/armor/steps"
+      }
+    ]
+  },
+  "eldritcheye:unseen_eye": {
+    "index": 2,
+    "category": "sorcery",
+    "tier": 3,
+    "sections": [
+      {
+        "type": "title",
+        "value": "Unseen Eye"
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "You draw the attention of a creature beyond the veil and offer it a glimpse of your world. Binding your soul to its presence, you borrow its otherworldly sight."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "This Tier 3 Eldritch spell grants control of a fragile, invisible, floating eye. Self, Touch, and Projectile bind the eye to the caster. Your body remains vulnerable; damage to either body or eye breaks the connection. The spell cannot be channeled."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "The visitor can observe, but cannot open containers, use blocks, collect items, or attack. Magnitude above 1 allows it to pass through walls. Lesser Magnitude grants no benefit. There is no distance tether. Duration sustains the connection, which costs 1 ordinary mana per second."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Fly with the movement keys, ascend with Jump, and descend with Sneak. Hold the M&A radial-menu key (Z by default), select Return, and release it to end the spell. Escape closes the radial menu without ending the spell."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "json": [
+          {
+            "text": "Holding the Staff of the Open Way in either hand when casting adds Open portal & return. For 150 ordinary mana, it opens the staff's shared two-way passage between your body and the eye, then ends your scrying. The portal remains for 30 seconds so allies or stranded travelers may pass. The eye can use M&A portals within the same dimension; cross-dimensional travel is not supported."
+          }
+        ]
+      }
+    ],
+    "related_recipes": [
+      {
+        "type": "spell_part",
+        "location": "eldritcheye:unseen_eye"
       }
     ]
   }

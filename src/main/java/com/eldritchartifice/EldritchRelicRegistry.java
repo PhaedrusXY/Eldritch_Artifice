@@ -13,7 +13,7 @@ final class EldritchRelicRegistry {
     // A non-null faction makes this a tier-4 grimoire. Null book models select our
     // ordinary JSON item model; spell inventory, menus and casting stay native.
     static final Grimoire GRIMOIRE = new Grimoire(
-            new Item.Properties().m_41487_(1), EldritchFaction.ID, null, null, false);
+            new Item.Properties().stacksTo(1), EldritchFaction.ID, null, null, false);
     static final ResourceLocation MARK_ID = new ResourceLocation(EldritchArtifice.MOD_ID, "mark_of_the_open_eye");
     static final Item MARK = new Item(new Item.Properties());
     static final LensOfTheVeil LENS = new LensOfTheVeil();

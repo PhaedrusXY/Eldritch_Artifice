@@ -57,7 +57,7 @@ public final class EldritchFaction extends BaseFaction {
 
     @Override
     public Component getOcculusTaskPrompt(int tier) {
-        return Component.m_237113_(tier>=5 ? "You have passed the final threshold." : "Complete the Ritual of Gate and Key");
+        return Component.literal(tier>=5 ? "You have passed the final threshold." : "Complete the Ritual of Gate and Key");
     }
 
     @Override

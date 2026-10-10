@@ -62,8 +62,8 @@ final class WayfarerDoors {
  private static boolean ownBlock(Object state){return call(state,"getBlock|m_60734_")==WayfarerRegistry.BLOCK;}
  private static Object state(Object world,WayfarerLedger.Place p){return RiftArena.state(world,p.x(),p.y(),p.z());}
  private static Token token(ItemStack stack){
-  if(stack.m_41720_()!=WayfarerRegistry.ITEM&&stack.m_41720_()!=WayfarerRegistry.CASE_ITEM)return null;
-  Object tag=stack.m_41783_();if(tag==null)return null;
+  if(stack.getItem()!=WayfarerRegistry.ITEM&&stack.getItem()!=WayfarerRegistry.CASE_ITEM)return null;
+  Object tag=stack.getTag();if(tag==null)return null;
   String id=(String)call(tag,"getString|m_128461_",NBT+"pair");if(id.isBlank())return null;
   int side=((Number)call(tag,"getInt|m_128451_",NBT+"side")).intValue();String nonce=(String)call(tag,"getString|m_128461_",NBT+"token");
   return new Token(id,side,nonce);
@@ -71,11 +71,11 @@ final class WayfarerDoors {
  private static boolean combined(Token t,ItemStack stack){
   if(t==null||t.side!=2||ledger==null)return false;
   var pair=ledger.get(t.pair);if(pair==null||pair.a().place()!=null||pair.b().place()!=null)return false;
-  Object tag=stack.m_41783_();
+  Object tag=stack.getTag();
   return t.nonce.equals(pair.a().token())&&pair.b().token().equals(call(tag,"getString|m_128461_",NBT+"token_b"));
  }
  private static ItemStack pairItem(String pair){
-  ItemStack stack=new ItemStack(WayfarerRegistry.CASE_ITEM);Object tag=stack.m_41784_();
+  ItemStack stack=new ItemStack(WayfarerRegistry.CASE_ITEM);Object tag=stack.getOrCreateTag();
   call(tag,"putString|m_128359_",NBT+"pair",pair);call(tag,"putInt|m_128405_",NBT+"side",2);
   call(tag,"putString|m_128359_",NBT+"token",ledger.get(pair).a().token());
   call(tag,"putString|m_128359_",NBT+"token_b",ledger.get(pair).b().token());
@@ -97,7 +97,7 @@ final class WayfarerDoors {
   consume(other);give(player,pairItem(pair));return true;
  }
  private static ItemStack item(String pair,int side){
-  ItemStack stack=new ItemStack(WayfarerRegistry.ITEM);Object tag=stack.m_41784_();
+  ItemStack stack=new ItemStack(WayfarerRegistry.ITEM);Object tag=stack.getOrCreateTag();
   call(tag,"putString|m_128359_",NBT+"pair",pair);call(tag,"putInt|m_128405_",NBT+"side",side);call(tag,"putString|m_128359_",NBT+"token",ledger.get(pair).end(side).token());
   Object name=staticCall("net.minecraft.network.chat.Component","literal|m_237113_","Wayfarer's Door "+(side==0?"A":"B")+" · "+pair.substring(0,8));
   call(stack,"setHoverName|m_41714_",name);return stack;

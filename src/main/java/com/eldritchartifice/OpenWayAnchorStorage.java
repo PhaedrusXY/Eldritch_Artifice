@@ -15,30 +15,30 @@ final class OpenWayAnchorStorage {
     }
 
     static int getSelected(ItemStack staff) {
-        if (staff == null || !staff.m_41782_()) {
+        if (staff == null || !staff.hasTag()) {
             return 0;
         }
-        int index = staff.m_41783_().m_128451_(INDEX_KEY);
+        int index = staff.getTag().getInt(INDEX_KEY);
         return clampIndex(index);
     }
 
     static void setSelected(ItemStack staff, int index) {
-        staff.m_41784_().m_128405_(INDEX_KEY, clampIndex(index));
+        staff.getOrCreateTag().putInt(INDEX_KEY, clampIndex(index));
     }
 
     static Anchor get(ItemStack staff, int index) {
         int slot = clampIndex(index);
-        if (staff == null || !staff.m_41782_()) {
+        if (staff == null || !staff.hasTag()) {
             return null;
         }
 
-        CompoundTag tag = staff.m_41783_();
+        CompoundTag tag = staff.getTag();
         String base = key(slot);
-        if (!tag.m_128441_(base + "Dimension")) {
+        if (!tag.contains(base + "Dimension")) {
             return null;
         }
 
-        String dimension = tag.m_128461_(base + "Dimension");
+        String dimension = tag.getString(base + "Dimension");
         if (dimension == null || dimension.isBlank()) {
             return null;
         }
@@ -46,9 +46,9 @@ final class OpenWayAnchorStorage {
         return new Anchor(
                 slot,
                 dimension,
-                tag.m_128451_(base + "X"),
-                tag.m_128451_(base + "Y"),
-                tag.m_128451_(base + "Z"));
+                tag.getInt(base + "X"),
+                tag.getInt(base + "Y"),
+                tag.getInt(base + "Z"));
     }
 
     static Anchor store(
@@ -59,12 +59,12 @@ final class OpenWayAnchorStorage {
             int y,
             int z) {
         int slot = clampIndex(index);
-        CompoundTag tag = staff.m_41784_();
+        CompoundTag tag = staff.getOrCreateTag();
         String base = key(slot);
-        tag.m_128359_(base + "Dimension", dimension);
-        tag.m_128405_(base + "X", x);
-        tag.m_128405_(base + "Y", y);
-        tag.m_128405_(base + "Z", z);
+        tag.putString(base + "Dimension", dimension);
+        tag.putInt(base + "X", x);
+        tag.putInt(base + "Y", y);
+        tag.putInt(base + "Z", z);
         setSelected(staff, slot);
         return new Anchor(slot, dimension, x, y, z);
     }

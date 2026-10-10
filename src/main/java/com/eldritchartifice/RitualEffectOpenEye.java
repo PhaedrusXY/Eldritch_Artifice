@@ -35,7 +35,7 @@ class RitualEffectOpenEye extends RitualEffect {
             bastion&&RiftArena.readyAt(context.getLevel(),at),RiftAudience.available(caster));
     }
     @Override public Component canRitualStart(IRitualContext context){
-        var d=decision(context);return d.error()==null?null:Component.m_237113_(d.error());
+        var d=decision(context);return d.error()==null?null:Component.literal(d.error());
     }
     @Override protected boolean applyRitualEffect(IRitualContext context){
         var d=decision(context);

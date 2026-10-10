@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.eldritchartifice",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "eye.mixin.EyeHudMixin",
+    "eye.mixin.EyeCodexSortMixin",
+    "client.mixin.ReserveManaBarMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
