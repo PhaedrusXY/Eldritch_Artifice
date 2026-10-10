@@ -42,7 +42,7 @@ final class TeleportRuntime {
         }
 
         try {
-            Object item = marker.m_41720_();
+            Object item = marker.getItem();
             if (item == null || !isPositional(marker)) {
                 return null;
             }
@@ -226,7 +226,7 @@ final class TeleportRuntime {
             return false;
         }
 
-        Object item = stack.m_41720_();
+        Object item = stack.getItem();
         if (item == null) {
             return false;
         }

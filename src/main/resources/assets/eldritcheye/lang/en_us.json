@@ -1,0 +1,7 @@
+{
+  "entity.eldritcheye.unseen_eye": "Unseen Eye",
+  "component.eldritcheye.unseen_eye": "Unseen Eye",
+  "spell.component.eldritcheye.unseen_eye": "Unseen Eye",
+  "eldritcheye:unseen_eye": "Unseen Eye",
+  "gui.eldritcheye.controls": "Hold %s for Unseen Eye controls"
+}

@@ -35,7 +35,7 @@ final class TeleportMarkerService {
                 return;
             }
 
-            ItemStack held = player.m_21120_(hand);
+            ItemStack held = player.getItemInHand(hand);
             rememberDimension(held, RuntimeMinecraft.currentDimension(player));
         } catch (ReflectiveOperationException | RuntimeException exception) {
             RuntimeLog.warn("Could not attach dimension metadata to an M&A positional mark: "
@@ -44,20 +44,20 @@ final class TeleportMarkerService {
     }
 
     static String destinationDimension(ItemStack marker, String fallbackDimension) {
-        if (marker == null || !marker.m_41782_()) {
+        if (marker == null || !marker.hasTag()) {
             return fallbackDimension;
         }
 
         try {
-            CompoundTag tag = marker.m_41783_();
+            CompoundTag tag = marker.getTag();
             String key = isBookOfMarks(marker)
                     ? BOOK_DIMENSION_PREFIX + selectedBookIndex(marker)
                     : DIMENSION_TAG;
-            if (tag == null || !tag.m_128441_(key)) {
+            if (tag == null || !tag.contains(key)) {
                 return fallbackDimension;
             }
 
-            String stored = tag.m_128461_(key);
+            String stored = tag.getString(key);
             return stored == null || stored.isBlank() ? fallbackDimension : stored;
         } catch (ReflectiveOperationException | RuntimeException exception) {
             RuntimeLog.warn("Could not read Teleport marker dimension; using current dimension: "
@@ -75,23 +75,23 @@ final class TeleportMarkerService {
         String key = isBookOfMarks(marker)
                 ? BOOK_DIMENSION_PREFIX + selectedBookIndex(marker)
                 : DIMENSION_TAG;
-        marker.m_41784_().m_128359_(key, dimension);
+        marker.getOrCreateTag().putString(key, dimension);
     }
 
     private static int selectedBookIndex(ItemStack stack) throws ReflectiveOperationException {
-        Object book = stack.m_41720_();
+        Object book = stack.getItem();
         Method getIndex = book.getClass().getMethod("getIndex", ItemStack.class);
         return ((Number) getIndex.invoke(book, stack)).intValue();
     }
 
     private static boolean isBookOfMarks(ItemStack stack) {
-        Object item = stack == null ? null : stack.m_41720_();
+        Object item = stack == null ? null : stack.getItem();
         return item != null
                 && "com.mna.items.runes.BookOfMarks".equals(item.getClass().getName());
     }
 
     private static boolean isPositionalItem(ItemStack stack) {
-        Object item = stack == null ? null : stack.m_41720_();
+        Object item = stack == null ? null : stack.getItem();
         if (item == null) {
             return false;
         }

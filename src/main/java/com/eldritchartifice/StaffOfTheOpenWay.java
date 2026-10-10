@@ -29,24 +29,24 @@ final class StaffOfTheOpenWay extends MagicStaff
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> m_7203_(
+    public InteractionResultHolder<ItemStack> use(
             Level level,
             Player player,
             InteractionHand hand) {
-        ItemStack staff = player.m_21120_(hand);
-        if (level.m_5776_()) {
+        ItemStack staff = player.getItemInHand(hand);
+        if (level.isClientSide()) {
             return success(staff);
         }
 
         int selected = getIndex(staff);
-        if (player.m_6144_()) {
+        if (player.isShiftKeyDown()) {
             OpenWayAnchorStorage.Anchor anchor = OpenWayAnchorStorage.store(
                     staff,
                     selected,
                     RuntimeMinecraft.currentDimension(player),
-                    (int) Math.floor(player.m_20185_()),
-                    (int) Math.floor(player.m_20186_()),
-                    (int) Math.floor(player.m_20189_()));
+                    (int) Math.floor(player.getX()),
+                    (int) Math.floor(player.getY()),
+                    (int) Math.floor(player.getZ()));
 
             RuntimeMinecraft.sendMessage(
                     player,
@@ -128,7 +128,7 @@ final class StaffOfTheOpenWay extends MagicStaff
         private AnchorRadialInventory(ItemStack staff) {
             for (int slot = 0; slot < entries.length; slot++) {
                 ItemStack token = new ItemStack((ItemLike) EldritchStaffRegistry.ANCHOR_TOKEN);
-                token.m_41714_(Component.m_237113_(OpenWayAnchorStorage.label(staff, slot)));
+                token.setHoverName(Component.literal(OpenWayAnchorStorage.label(staff, slot)));
                 entries[slot] = token;
             }
         }

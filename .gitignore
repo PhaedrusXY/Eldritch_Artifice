@@ -9,3 +9,6 @@ out/
 *.jar
 *.zip
 .DS_Store
+
+# Gradle wrapper is part of the reproducible build.
+!gradle/wrapper/gradle-wrapper.jar
