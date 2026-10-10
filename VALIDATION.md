@@ -1,4 +1,4 @@
-# 0.12.0-alpha validation
+# 0.12.1-alpha validation
 
 ## Completed
 
@@ -7,7 +7,10 @@
 - Compared the integration to the recovered 0.2.2-test source. Changes are limited to the module bootstrap, client event ownership, and moving the eye's guide entry into the main guide. Its gameplay/network code is preserved. A separate client-only mixin adds the newly requested reserve-mana visualization.
 - Reviewed the direct Minecraft method-name conversion using Forge's SRG-to-official mappings. Reflection aliases are unchanged.
 - Inspected M&A 3.1.11 HUD bytecode: the reserve mixin targets the single `getBarColor()` call before the spell-cost preview and the single `getMagicXP()` call before frame/text rendering. It uses the provider's geometry and actual reserve capacity; visual behavior still requires client testing.
-- Launched an isolated Forge 47.4.5 dedicated-server installation with the combined jar, M&A, Dimensional Doors, Curios 5.14.1+1.20.1, GeckoLib 4.8.4, Architectury 9.2.14, and Cloth Config 11.1.136. It reached Minecraft's EULA prompt and exited. This confirms discovery only, **not** successful mod initialization or a world boot. M&A emitted warnings about its client-targeting mixins on the server before the prompt.
+- Full dedicated-server smoke test passed after the user authorized EULA acceptance: Forge 47.4.5, M&A 3.1.11, Dimensional Doors 5.4.4, Curios 5.14.1+1.20.1, GeckoLib 4.8.4, Architectury 9.2.14, and Cloth Config 11.1.136. The 0.12.1 jar initialized, generated a fresh isolated world, reached `Done`, saved every dimension, and shut down normally with exit code 0.
+- Confirmed `/unseeneye` and `/eldritch` command registration, the legacy `eldritcheye:unseen_eye` entity selector, and the eye's generated spell configuration. Faction, spell, ritual, relic, armor, staff, and Eldritch mana registrations completed without Eldritch Artifice errors.
+- The first full boot caught the 0.12.0 candidate's mixin package collision. 0.12.1 moves all three mixins into `com.eldritchartifice.mixin`; the packaging check now rejects ordinary mod classes inside a reserved mixin package. Do not install the earlier 0.12.0 jar.
+- Environment/dependency messages remained: M&A's client-targeting mixin warnings, its failed remote aura query, unavailable Mojang authentication-key fetch/LAN broadcast in the isolated environment, first-run configuration defaults, and a startup tick-delay warning. None prevented startup, saves, or shutdown. No player joined, so authentication, client rendering, spell play, and existing-world migration are **not** covered by this smoke test.
 
 ## Release gate: combined-build smoke test
 
@@ -27,6 +30,6 @@ Operator shortcut: `/unseeneye start 600 1` for the base eye or `/unseeneye star
 
 ## Publication and deployment
 
-Candidate version: `0.12.0-alpha` (CurseForge **Alpha**, Minecraft **1.20.1**, **Forge**). Dependencies: Mana and Artifice and Dimensional Doors, plus their required dependencies. Use RELEASE_NOTES.md for the new version's changelog.
+Candidate version: `0.12.1-alpha` (CurseForge **Alpha**, Minecraft **1.20.1**, **Forge**). Dependencies: Mana and Artifice and Dimensional Doors, plus their required dependencies. Use RELEASE_NOTES.md for the new version's changelog.
 
-GitHub source, CurseForge publication, and live-server deployment are separate operations. Do not report them as complete based on a local build. GitHub source is being prepared on `release/0.12.0-unseen-eye` for review. CurseForge is signed out, and the live-server destinations/access are not available. CurseForge publication and live deployment remain gated on the combined-build smoke test and destination access.
+GitHub source, CurseForge publication, and live-server deployment are separate operations. Do not report them as complete based on a local build. GitHub source is in draft PR #1 on `release/0.12.0-unseen-eye`; that branch name is retained for the corrected 0.12.1 candidate. CurseForge is signed out, and the live-server destinations/access are not available. CurseForge publication and live deployment remain gated on the combined-build smoke test and destination access.

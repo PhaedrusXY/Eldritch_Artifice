@@ -35,8 +35,13 @@ with zipfile.ZipFile(jar) as archive:
     assert legacy in json.dumps(recipe)
     assert 'assets/eldritcheye/guide/en_us.json' not in names, 'Duplicate guide path'
     mixins = json.loads(archive.read('eldritchartifice.mixins.json'))
-    assert mixins['client'] == ['eye.mixin.EyeHudMixin', 'eye.mixin.EyeCodexSortMixin', 'client.mixin.ReserveManaBarMixin']
+    assert mixins['client'] == ['EyeHudMixin', 'EyeCodexSortMixin', 'ReserveManaBarMixin']
     assert not mixins.get('mixins')
+    mixin_prefix = mixins['package'].replace('.', '/') + '/'
+    declared_mixins = {mixin_prefix + cls + '.class' for cls in mixins['client']}
+    # Mixin reserves its entire package; ordinary mod classes must never live there.
+    assert {n for n in names if n.startswith(mixin_prefix) and n.endswith('.class')} == declared_mixins
+    assert 'com/eldritchartifice/EldritchArtifice.class' not in declared_mixins
     assert 'MixinConfigs: eldritchartifice.mixins.json' in archive.read('META-INF/MANIFEST.MF').decode()
     assert archive.read('com/eldritchartifice/eye/EyeWheel.class').find(b'setVisible') >= 0
 print(f'PASS: {jar.name}: single mod, legacy spell resources, guide entries, client mixins, Java 17')

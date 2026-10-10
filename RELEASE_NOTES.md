@@ -1,3 +1,11 @@
+# Eldritch Artifice 0.12.1 alpha
+
+- Fixes a startup-blocking mixin package error in the unreleased 0.12.0 candidate. All mixins now live in a dedicated package, so normal mod classes can load.
+- Adds a packaging regression check that rejects ordinary classes inside the configured mixin package.
+- Includes all Unseen Eye, codex ordering, and reserve-mana HUD changes described below. Use this jar instead of the earlier 0.12.0 candidate.
+
+Validation: clean Java 17/Gradle build and packaged-jar checks passed. A Forge 47.4.5 dedicated server initialized the mod, generated a fresh world, reached Done, exposed both command sets, saved all dimensions, and exited normally. Client visuals/gameplay and an existing-world upgrade still need the checks in VALIDATION.md.
+
 # Eldritch Artifice 0.12.0 alpha
 
 - Added a purple gradient to the reserve portion of the Eldritch mana bar, darkest near empty, and a small marker at the Warp threshold. The boundary uses the actual reserve capacity; M&A's spell-cost preview, bar placement, and numbers remain in place. Other factions' bars are unchanged.

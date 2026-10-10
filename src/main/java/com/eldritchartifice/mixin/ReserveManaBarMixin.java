@@ -1,4 +1,4 @@
-package com.eldritchartifice.client.mixin;
+package com.eldritchartifice.mixin;
 
 import com.eldritchartifice.EldritchMana;
 import com.mna.api.capabilities.IPlayerMagic;

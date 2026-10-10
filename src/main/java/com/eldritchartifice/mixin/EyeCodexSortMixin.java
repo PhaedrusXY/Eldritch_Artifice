@@ -1,4 +1,4 @@
-package com.eldritchartifice.eye.mixin;
+package com.eldritchartifice.mixin;
 
 import com.mna.guide.GuidebookEntry;
 import org.spongepowered.asm.mixin.Mixin;

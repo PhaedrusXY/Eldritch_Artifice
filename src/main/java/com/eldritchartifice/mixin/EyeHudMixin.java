@@ -1,4 +1,4 @@
-package com.eldritchartifice.eye.mixin;
+package com.eldritchartifice.mixin;
 
 import com.eldritchartifice.eye.EyeControls;
 import com.mna.KeybindInit;
