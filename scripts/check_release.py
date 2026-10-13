@@ -35,13 +35,20 @@ with zipfile.ZipFile(jar) as archive:
     assert legacy in json.dumps(recipe)
     assert 'assets/eldritcheye/guide/en_us.json' not in names, 'Duplicate guide path'
     mixins = json.loads(archive.read('eldritchartifice.mixins.json'))
-    assert mixins['client'] == ['EyeHudMixin', 'EyeCodexSortMixin', 'ReserveManaBarMixin']
-    assert not mixins.get('mixins')
+    assert mixins['client'] == ['EyeHudMixin', 'EyeCodexSortMixin', 'ReserveManaBarMixin',
+                                'RitualPouchScreenAccessor']
+    assert mixins['mixins'] == ['PouchSelectedNameMixin']
     mixin_prefix = mixins['package'].replace('.', '/') + '/'
-    declared_mixins = {mixin_prefix + cls + '.class' for cls in mixins['client']}
+    declared_mixins = {mixin_prefix + cls + '.class'
+                       for cls in mixins['client'] + mixins['mixins']}
     # Mixin reserves its entire package; ordinary mod classes must never live there.
     assert {n for n in names if n.startswith(mixin_prefix) and n.endswith('.class')} == declared_mixins
     assert 'com/eldritchartifice/EldritchArtifice.class' not in declared_mixins
     assert 'MixinConfigs: eldritchartifice.mixins.json' in archive.read('META-INF/MANIFEST.MF').decode()
     assert archive.read('com/eldritchartifice/eye/EyeWheel.class').find(b'setVisible') >= 0
-print(f'PASS: {jar.name}: single mod, legacy spell resources, guide entries, client mixins, Java 17')
+    for name in ['pouch/PouchLabels', 'pouch/PouchEditSession', 'pouch/RitualPouchNetwork',
+                 'client/RitualPouchClient', 'client/PouchRenameScreen']:
+        assert 'com/eldritchartifice/' + name + '.class' in names, name
+    assert b'eldritchartifice:ritual_label' in archive.read('com/eldritchartifice/pouch/PouchLabels.class')
+    assert not any(n.endswith('Test.class') for n in names), 'Tests must not ship in the mod jar'
+print(f'PASS: {jar.name}: single mod, legacy spell resources, guide entries, side-separated mixins, pouch labels, Java 17')

@@ -5,7 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '6.0.54'
 }
 
-version = '0.12.2-alpha'
+version = '0.12.3-alpha'
 group = 'com.eldritchartifice'
 
 base {
@@ -40,6 +40,7 @@ minecraft {
 }
 
 repositories {
+    mavenCentral()
     maven {
         url = 'https://cursemaven.com'
         content {
@@ -52,6 +53,15 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.4.5'
     implementation fg.deobf('curse.maven:mana-and-artifice-406360:6847805')
     implementation fg.deobf('curse.maven:dimensionaldoors-284876:6421500')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat 'full'
+    }
 }
 
 tasks.named('jar', Jar).configure {
