@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.12.2-alpha";
+    public static final String VERSION = "0.12.3-alpha";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
@@ -53,10 +53,10 @@ public final class EldritchArtifice {
                 event -> safeHandle("rift arena recovery", () -> RiftArena.started(event)));
         eventBridge.register("net.minecraftforge.event.level.BlockEvent$BreakEvent",
                 event -> safeHandle("rift block protection", () -> RiftArena.protect(event)));
-        eventBridge.register("net.minecraftforge.event.level.BlockEvent$EntityPlaceEvent",
-                event -> safeHandle("rift placement protection", () -> RiftArena.protect(event)));
         eventBridge.register("net.minecraftforge.event.level.ExplosionEvent$Detonate",
                 event -> safeHandle("rift explosion protection", () -> RiftArena.explosion(event)));
+        eventBridge.register("net.minecraftforge.event.level.BlockEvent$EntityPlaceEvent",
+                event -> safeHandle("rift placement protection", () -> RiftArena.protect(event)));
         eventBridge.register(
                 "net.minecraftforge.event.TickEvent$PlayerTickEvent",
                 event -> safeHandle(
@@ -99,6 +99,7 @@ public final class EldritchArtifice {
                     WatcherService.clearFor(player, "owner_dimension_change");
                     DisplacementService.clearFor(player, "owner_dimension_change");
                     TimeWarpService.clearFor(player, "owner_dimension_change");
+                    Tier5ArmorService.clearFor(player, "owner_dimension_change");
                     WarpService.onDimensionChanged(event);
                 }));
         eventBridge.register(

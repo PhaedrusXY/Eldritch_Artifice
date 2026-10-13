@@ -4,13 +4,13 @@ license="MIT"
 
 [[mods]]
 modId="eldritchartifice"
-version="0.12.2-alpha"
+version="0.12.3-alpha"
 displayName="Eldritch Artifice"
 authors="Prototype build"
 description='''
 An Eldritch faction addon for Mana and Artifice with Dimensional Doors integration.
 Includes Unseen Eye scrying, shared Open Way portals, Eldritch spells and relics, Fray,
-Reserve overcasting, and otherworldly encounters.
+Reserve overcasting, customizable saved ritual names, and otherworldly encounters.
 '''
 
 [[dependencies.eldritchartifice]]
