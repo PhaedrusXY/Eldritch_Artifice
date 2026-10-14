@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.pouchritual.labels.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["PouchSelectedNameMixin"],
+  "client": ["RitualPouchScreenAccessor"],
+  "injectors": {"defaultRequire": 1}
+}

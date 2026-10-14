@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[47,48)"
+license="MIT"
+
+[[mods]]
+modId="pouchlabels"
+version="0.1.0-alpha"
+displayName="Mana and Artifice: Ritual Pouch Labels"
+authors="PhaedrusXY"
+description='''
+Rename saved rituals in the Mana and Artifice Practitioner's Pouch and
+Mithion's Magnificent Mbag, without installing Eldritch Artifice.
+'''
+
+[[dependencies.pouchlabels]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.5,48)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pouchlabels]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pouchlabels]]
+modId="mna"
+mandatory=true
+versionRange="[3.1.11,3.1.12)"
+ordering="AFTER"
+side="BOTH"

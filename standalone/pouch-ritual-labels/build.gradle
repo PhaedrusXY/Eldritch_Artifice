@@ -1,0 +1,63 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '6.0.54'
+}
+version = '0.1.0-alpha'
+group = 'com.pouchritual.labels'
+base { archivesName = 'pouch-ritual-labels' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            mods { pouchlabels { source sourceSets.main } }
+        }
+        server {
+            workingDirectory project.file('run')
+            args '--nogui'
+            mods { pouchlabels { source sourceSets.main } }
+        }
+    }
+}
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
+}
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.5'
+    implementation fg.deobf('curse.maven:mana-and-artifice-406360:6847805')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat 'full'
+    }
+}
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Specification-Title': 'pouchlabels',
+            'Specification-Vendor': 'Pouch Ritual Labels',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.jar.archiveVersion,
+            'Implementation-Vendor': 'Pouch Ritual Labels',
+            'MixinConfigs': 'pouchlabels.mixins.json'
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+repositories.configureEach { repo ->
+    if (repo instanceof MavenArtifactRepository && repo.url.toString().contains('minecraftforge.net')) {
+        repo.metadataSources { mavenPom(); artifact(); ignoreGradleMetadataRedirection() }
+    }
+}
