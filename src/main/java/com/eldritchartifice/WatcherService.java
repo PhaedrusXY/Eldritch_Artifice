@@ -18,6 +18,7 @@ import java.util.concurrent.ThreadLocalRandom;
 final class WatcherService {
     private static final String MARKER_PREFIX = "eldritchartifice:watcher:";
     private static final String OWNER_NBT = "eldritchartifice_watcher_owner";
+    private static final String WATCHER_SHELL_CLASS = "org.dimdev.dimdoors.entity.MonolithEntity";
 
     private static final int MAX_ATTENTION = 250;
     private static final long FULLY_OPEN_WARNING_TICKS = 40L;
@@ -597,8 +598,7 @@ final class WatcherService {
             }
             Object monolith = create.invoke(entityType, level);
             if (monolith == null
-                    || !"org.dimdev.dimdoors.entity.MonolithEntity"
-                            .equals(monolith.getClass().getName())) {
+                    || !WATCHER_SHELL_CLASS.equals(monolith.getClass().getName())) {
                 throw new IllegalStateException(
                         "dimdoors:monolith did not create a MonolithEntity: " + monolith);
             }
@@ -959,8 +959,16 @@ final class WatcherService {
         }
     }
 
+    static boolean isWatcherShell(Object entity) {
+        return entity != null && WATCHER_SHELL_CLASS.equals(entity.getClass().getName());
+    }
+
     private static UUID watcherOwner(Object entity) {
-        if (entity == null) {
+        // Mob-griefing queries run once per affected block (e.g. each block an
+        // Ice and Fire dragon breath can break). Only our Dimensional Doors
+        // Monolith shell can be a Watcher, so skip reflection for every other
+        // mob rather than probing persistent NBT for each block.
+        if (!isWatcherShell(entity)) {
             return null;
         }
 
