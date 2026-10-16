@@ -262,22 +262,6 @@ final class WatcherService {
         }
     }
 
-    static void onMobGriefing(Object event) {
-        Object entity = eventEntity(event);
-        if (watcherOwner(entity) == null) {
-            return;
-        }
-
-        try {
-            Class<?> resultClass = Class.forName("net.minecraftforge.eventbus.api.Event$Result");
-            Object deny = enumConstant(resultClass, "DENY");
-            Method setResult = event.getClass().getMethod("setResult", resultClass);
-            setResult.invoke(event, deny);
-        } catch (ReflectiveOperationException exception) {
-            throw new IllegalStateException("Unable to deny Watcher mob griefing.", exception);
-        }
-    }
-
     static void onLivingDeath(Object event) {
         Object entity = eventEntity(event);
         UUID watcherOwner = watcherOwner(entity);
@@ -964,10 +948,9 @@ final class WatcherService {
     }
 
     private static UUID watcherOwner(Object entity) {
-        // Mob-griefing queries run once per affected block (e.g. each block an
-        // Ice and Fire dragon breath can break). Only our Dimensional Doors
-        // Monolith shell can be a Watcher, so skip reflection for every other
-        // mob rather than probing persistent NBT for each block.
+        // Only our Dimensional Doors Monolith shell can be a Watcher.
+        // Reject unrelated entities before the remaining attack, drop, join,
+        // and rendering hooks perform reflective NBT or custom-name lookups.
         if (!isWatcherShell(entity)) {
             return null;
         }
@@ -1232,16 +1215,6 @@ final class WatcherService {
             }
         }
         return null;
-    }
-
-    private static Object enumConstant(Class<?> enumClass, String name) {
-        for (Object value : enumClass.getEnumConstants()) {
-            if (value instanceof Enum<?> enumValue && enumValue.name().equals(name)) {
-                return value;
-            }
-        }
-        throw new IllegalStateException(
-                "Enum constant " + name + " not found in " + enumClass.getName());
     }
 
     private static final class WatcherRecord {
