@@ -18,6 +18,7 @@ import java.util.concurrent.ThreadLocalRandom;
 final class WatcherService {
     private static final String MARKER_PREFIX = "eldritchartifice:watcher:";
     private static final String OWNER_NBT = "eldritchartifice_watcher_owner";
+    private static final String WATCHER_SHELL_CLASS = "org.dimdev.dimdoors.entity.MonolithEntity";
 
     private static final int MAX_ATTENTION = 250;
     private static final long FULLY_OPEN_WARNING_TICKS = 40L;
@@ -258,22 +259,6 @@ final class WatcherService {
 
         if (watcherOwner(attacker) != null) {
             cancel(event);
-        }
-    }
-
-    static void onMobGriefing(Object event) {
-        Object entity = eventEntity(event);
-        if (watcherOwner(entity) == null) {
-            return;
-        }
-
-        try {
-            Class<?> resultClass = Class.forName("net.minecraftforge.eventbus.api.Event$Result");
-            Object deny = enumConstant(resultClass, "DENY");
-            Method setResult = event.getClass().getMethod("setResult", resultClass);
-            setResult.invoke(event, deny);
-        } catch (ReflectiveOperationException exception) {
-            throw new IllegalStateException("Unable to deny Watcher mob griefing.", exception);
         }
     }
 
@@ -597,8 +582,7 @@ final class WatcherService {
             }
             Object monolith = create.invoke(entityType, level);
             if (monolith == null
-                    || !"org.dimdev.dimdoors.entity.MonolithEntity"
-                            .equals(monolith.getClass().getName())) {
+                    || !WATCHER_SHELL_CLASS.equals(monolith.getClass().getName())) {
                 throw new IllegalStateException(
                         "dimdoors:monolith did not create a MonolithEntity: " + monolith);
             }
@@ -959,8 +943,15 @@ final class WatcherService {
         }
     }
 
+    static boolean isWatcherShell(Object entity) {
+        return entity != null && WATCHER_SHELL_CLASS.equals(entity.getClass().getName());
+    }
+
     private static UUID watcherOwner(Object entity) {
-        if (entity == null) {
+        // Only our Dimensional Doors Monolith shell can be a Watcher.
+        // Reject unrelated entities before the remaining attack, drop, join,
+        // and rendering hooks perform reflective NBT or custom-name lookups.
+        if (!isWatcherShell(entity)) {
             return null;
         }
 
@@ -1224,16 +1215,6 @@ final class WatcherService {
             }
         }
         return null;
-    }
-
-    private static Object enumConstant(Class<?> enumClass, String name) {
-        for (Object value : enumClass.getEnumConstants()) {
-            if (value instanceof Enum<?> enumValue && enumValue.name().equals(name)) {
-                return value;
-            }
-        }
-        throw new IllegalStateException(
-                "Enum constant " + name + " not found in " + enumClass.getName());
     }
 
     private static final class WatcherRecord {

@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(EldritchArtifice.MOD_ID)
 public final class EldritchArtifice {
     public static final String MOD_ID = "eldritchartifice";
-    public static final String VERSION = "0.12.3-alpha";
+    public static final String VERSION = "0.12.4-alpha";
 
     public EldritchArtifice() {
         RuntimeLog.info("Bootstrapping " + VERSION);
@@ -164,11 +164,6 @@ public final class EldritchArtifice {
                 event -> safeHandle(
                         "Watcher stale-entity cleanup",
                         () -> WatcherService.onEntityJoinLevel(event)));
-        eventBridge.register(
-                "net.minecraftforge.event.entity.EntityMobGriefingEvent",
-                event -> safeHandle(
-                        "Watcher mob-griefing isolation",
-                        () -> WatcherService.onMobGriefing(event)));
         eventBridge.register(
                 "net.minecraftforge.event.entity.living.LivingEvent$LivingTickEvent",
                 event -> safeHandle(
