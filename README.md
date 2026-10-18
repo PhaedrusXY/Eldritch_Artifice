@@ -6,6 +6,10 @@ An experimental Eldritch faction addon for **Minecraft 1.20.1**, **Forge 47.4.5 
 
 This remains an Alpha release while the planned sanctum work is incomplete. The repository includes editable Java sources, recipes, codex pages, textures, and the Gradle build definition. Dependencies are downloaded for building and are not included in the released jar.
 
+## Administrator and testing commands
+
+See the [complete command reference](COMMANDS.md) for all 40 `/eldritch` subcommands and the `/unseeneye` start, status, and stop commands, including arguments, permission requirements, and safety notes. **`/eldritch` commands are operator-only** and several alter character progression or world state. Test on backed-up worlds.
+
 ## Build
 
 Install Java 17, then run:
